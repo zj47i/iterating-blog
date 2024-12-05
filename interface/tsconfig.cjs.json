@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "composite": true /* Enable constraints that allow a TypeScript project to be used with project references. */,
+        "declaration": true /* Generate .d.ts files from TypeScript and JavaScript files in your project. */,
+        "declarationMap": true /* Create sourcemaps for d.ts files. */,
+        "esModuleInterop": true /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */,
+        "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. */,
+        "module": "CommonJS",
+        "outDir": "./dist/cjs",
+        "rootDir": "./src",
+        "moduleResolution": "Node",
+        "skipLibCheck": true /* Skip type checking all .d.ts files. */,
+        "strict": true /* Enable all strict type-checking options. */,
+        "target": "ESNext"
+    },
+    "include": ["src"]
+}

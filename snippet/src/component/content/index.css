@@ -1,0 +1,36 @@
+.draft {
+    display: flex; /* Use flexbox for layout */
+    flex-direction: row; /* Default to horizontal layout */
+    justify-content: space-between; /* Distribute space between child elements */
+    align-items: stretch; /* Align items to stretch to container’s height */
+    gap: 20px; /* Space between sections */
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    padding: 20px; /* Optional padding around the container */
+}
+
+.draft-index-table {
+    flex: 1; /* Occupies one part of the available space */
+    min-width: 150px; /* Minimum width for responsiveness */
+    padding: 20px; /* Padding around content */
+    background-color: #f5f5f5; /* Background color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    box-sizing: border-box; /* Padding doesn't affect width */
+}
+
+.draft-content {
+    flex: 3; /* Takes twice as much space */
+    min-width: 300px; /* Minimum width for responsiveness */
+    padding: 20px; /* Padding around content */
+    background-color: #ffffff; /* Background color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    box-sizing: border-box; /* Padding doesn't affect width */
+}
+
+/* Responsive Design for Mobile Devices */
+@media (max-width: 768px) {
+    .draft {
+        flex-direction: column; /* Switch to vertical layout */
+        gap: 10px; /* Adjust gap for smaller screens */
+    }
+}

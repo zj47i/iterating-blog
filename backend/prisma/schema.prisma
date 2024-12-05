@@ -1,0 +1,36 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider     = "postgresql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model Draft {
+  id        Int      @id @default(autoincrement()) // auto
+  title     String
+  content   String
+  writer    String
+  owner     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+enum DraftAction {
+  EDIT
+  DELETE
+}
+
+model DraftHistory {
+  id        Int         @id @default(autoincrement()) // auto
+  draftId   Int
+  title     String
+  content   String
+  writer    String
+  owner     String
+  action    DraftAction?
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+}

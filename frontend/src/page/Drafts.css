@@ -1,0 +1,91 @@
+/* Drafts Container */
+.drafts {
+    padding: 20px;
+    background-color: #1E1E2F;
+    border-radius: 16px;
+    width: 600px; /* 고정된 너비 */
+    margin: 0 auto; /* 중앙에 배치 */
+    color: #FFFFFF;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
+}
+
+/* Table Styles */
+.drafts-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    table-layout: auto; /* 테이블 레이아웃 자동 */
+}
+
+.drafts-table tr {
+    background-color: #2C2C3C;
+    transition: background-color 0.3s ease;
+    height: 50px; /* 행 높이 고정 */
+}
+
+.drafts-table tr:nth-child(even) {
+    background-color: #242436;
+}
+
+.drafts-table tr:hover {
+    background-color: #343446;
+}
+
+/* 고정된 열 너비 */
+.drafts-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #3E3E5E;
+    vertical-align: middle; /* 텍스트가 중간에 오도록 설정 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.drafts-table td.title {
+    width: calc(100% - 120px); /* 나머지 공간을 차지 */
+}
+
+.drafts-table td.date {
+    width: 100px; /* 날짜 열의 고정된 너비 */
+    text-align: right; /* 오른쪽 정렬 */
+}
+
+.drafts-table a {
+    text-decoration: none;
+    color: #14F195;
+    font-weight: bold;
+}
+
+.drafts-table a:hover {
+    text-decoration: underline;
+    color: #9945FF;
+}
+
+/* Pagination Styles */
+.drafts-pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.drafts-pagination button {
+    margin: 0 5px;
+    padding: 8px 12px;
+    border: 1px solid #14F195;
+    border-radius: 4px;
+    background-color: #1E1E2F;
+    color: #14F195;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.drafts-pagination button:hover {
+    background-color: #14F195;
+    color: #1E1E2F;
+}
+
+.drafts-pagination button.active {
+    background-color: #9945FF;
+    border-color: #9945FF;
+    color: #FFFFFF;
+}

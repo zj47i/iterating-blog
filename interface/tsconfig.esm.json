@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "composite": true /* Enable constraints that allow a TypeScript project to be used with project references. */,
+        "declaration": true /* Generate .d.ts files from TypeScript and JavaScript files in your project. */,
+        "declarationMap": true /* Create sourcemaps for d.ts files. */,
+        "esModuleInterop": true /* Emit additional JavaScript to ease support for importing CommonJS modules. This enables 'allowSyntheticDefaultImports' for type compatibility. */,
+        "forceConsistentCasingInFileNames": true /* Ensure that casing is correct in imports. */,
+        "module": "ESNext" /* Specify what module code is generated. */,
+        "moduleResolution": "Node" /* Specify how TypeScript looks up a file from a given module specifier. */,
+        "outDir": "./dist/esm" /* Specify an output folder for all emitted files. */,
+        "rootDir": "./src" /* Specify the root folder within your source files. */,
+        "skipLibCheck": true /* Skip type checking all .d.ts files. */,
+        "strict": true /* Enable all strict type-checking options. */,
+        "target": "ES2022" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */
+    }
+}
