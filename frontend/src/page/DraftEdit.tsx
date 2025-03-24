@@ -19,7 +19,7 @@ const DraftEdit: React.FC = () => {
     const location = useLocation();
     const params = new URLSearchParams(location.search);
     const id = params.get("id");
-    
+
     const navigation = useNavigate();
     const { authenticate } = useAuth();
 

@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import Quill from "quill";
 import hljs from "highlight.js";
-import "./index.css";
+// import "./index.css";
 import Delta from "quill-delta";
 import { selectHeaders } from "../../lib/html/select-headers";
 
@@ -23,6 +23,7 @@ export default ({
 
         const quill = new Quill(content, {
             theme: "snow",
+            readOnly: true,
             modules: {
                 syntax: { hljs },
                 toolbar: false,
@@ -38,6 +39,20 @@ export default ({
             content.removeChild(quill.root);
         };
     }, [delta]);
+
+    useEffect(() => {
+        const handleBeforeUnload = (event: BeforeUnloadEvent) => {
+            event.preventDefault();
+        };
+
+        window.addEventListener("beforeunload", handleBeforeUnload);
+
+        console.log(1);
+
+        return () => {
+            window.removeEventListener("beforeunload", handleBeforeUnload);
+        };
+    }, []);
 
     return (
         <div className="editor" ref={editorRef}>

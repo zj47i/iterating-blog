@@ -1,0 +1,8 @@
+.app-container {
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    flex: 1;
+    align-items: flex-start;
+}
