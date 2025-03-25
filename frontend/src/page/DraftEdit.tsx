@@ -5,7 +5,7 @@ import Delta from "quill-delta";
 import { getDraft } from "../api/get-draft";
 import { useAuth } from "../context/AuthProvider";
 import { deleteDraft } from "../api/delete-draft";
-import DraftIndexTable from "../component/DraftIndexTable";
+import DraftIndexTable from "../component/DraftIndexTable/DraftIndexTable";
 import DraftWriter from "../component/DraftWriter";
 import { selectHeaders } from "../lib/html/select-headers";
 import Quill from "quill";

@@ -1,5 +1,4 @@
 import { BrowserRouter } from "react-router-dom";
-import Layout from "./component/Layout";
 import { useMemo } from "react";
 import {
     ConnectionProvider,
@@ -15,10 +14,10 @@ import { clusterApiUrl } from "@solana/web3.js";
 
 // Default styles that can be overridden by your app
 import "@solana/wallet-adapter-react-ui/styles.css";
-import { AuthProvider } from "./context/AuthProvider";
-import AppHeader from "./component/AppHeader/AppHeader";
-import AppContainer from "./component/AppContainer/AppContainer";
-import AppFooter from "./component/AppFooter/AppFooter";
+import { AuthProvider } from "../context/AuthProvider";
+import AppHeader from "./AppHeader/AppHeader";
+import AppContainer from "./AppContainer/AppContainer";
+import AppFooter from "./AppFooter/AppFooter";
 
 function App() {
     const network = WalletAdapterNetwork.Mainnet;

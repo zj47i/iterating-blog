@@ -1,9 +1,9 @@
 import Delta from "quill-delta";
-import DraftReader from "../component/DraftReader";
+import DraftReader from "../component/DraftReader/DraftReader";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getDraft } from "../api/get-draft";
-import DraftIndexTable from "../component/DraftIndexTable";
+import DraftIndexTable from "../component/DraftIndexTable/DraftIndexTable";
 
 const DraftRead: React.FC = () => {
     const [delta, setDelta] = useState<Delta>(new Delta());
@@ -31,14 +31,15 @@ const DraftRead: React.FC = () => {
     }, [id]);
 
     return (
-        <div className="draft-read">
-            <input className="draft-title" value={title} readOnly />
-            <div className="draft">
-                <DraftIndexTable headers={headers} />
-                <DraftReader delta={delta} setHeaders={setHeaders} />
-            </div>
-            <button onClick={navigateToEdit}>수정</button>
-        </div>
+        <>
+            <DraftIndexTable headers={headers} />
+            <DraftReader
+                title={title}
+                delta={delta}
+                setHeaders={setHeaders}
+                navigateToEdit={navigateToEdit}
+            />
+        </>
     );
 };
 

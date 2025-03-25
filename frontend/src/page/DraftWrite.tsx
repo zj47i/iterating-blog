@@ -7,7 +7,7 @@ import { useAuth } from "../context/AuthProvider";
 import DraftWriter from "../component/DraftWriter";
 import { selectHeaders } from "../lib/html/select-headers";
 import Quill from "quill";
-import DraftIndexTable from "../component/DraftIndexTable";
+import DraftIndexTable from "../component/DraftIndexTable/DraftIndexTable";
 
 import "./DraftWrite.css";
 

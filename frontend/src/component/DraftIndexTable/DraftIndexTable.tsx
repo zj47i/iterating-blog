@@ -1,16 +1,17 @@
 import { useRef } from "react";
+import "./DraftIndexTable.css";
 
 interface HeaderWithAnchorProps {
     headers: HTMLHeadElement[];
 }
 
-const DraftIndexTable: React.FC<HeaderWithAnchorProps> = ({ headers }) => {
-    const containerRef = useRef<HTMLDivElement | null>(null);
+const draftIndex = (headers: HTMLHeadElement[]) => {
     if (headers.length === 0) {
         return null;
     }
+
     return (
-        <div className="draft-index-table" ref={containerRef}>
+        <ul>
             {headers.map((header, index) => {
                 const headerId = `header-${index}`;
                 const anchorId = `elmt-${index}`;
@@ -18,7 +19,7 @@ const DraftIndexTable: React.FC<HeaderWithAnchorProps> = ({ headers }) => {
                 const headerNumber = Number(header.tagName.match(/\d+/)![0]);
                 const ensp = "\u2003".repeat(headerNumber - 1);
                 return (
-                    <div key={anchorId}>
+                    <li key={anchorId}>
                         {ensp}
                         <a
                             href={`#${headerId}`}
@@ -30,10 +31,20 @@ const DraftIndexTable: React.FC<HeaderWithAnchorProps> = ({ headers }) => {
                         >
                             🔗 {header.textContent}
                         </a>
-                    </div>
+                    </li>
                 );
             })}
-        </div>
+        </ul>
+    );
+};
+
+const DraftIndexTable: React.FC<HeaderWithAnchorProps> = ({ headers }) => {
+    const containerRef = useRef<HTMLDivElement | null>(null);
+    return (
+        <aside className="app-draft-index" ref={containerRef}>
+            <h3>Contents</h3>
+            {draftIndex(headers)}
+        </aside>
     );
 };
 
