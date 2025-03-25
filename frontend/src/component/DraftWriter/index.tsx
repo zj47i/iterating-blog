@@ -4,7 +4,7 @@ import hljs from "highlight.js";
 import "./index.css";
 import Delta from "quill-delta";
 import { toolbarOptions } from "./tool-bar-options";
-import { selectHeaders } from "../../lib/html/select-headers";
+import { selectHeaders } from "../../lib/select-headers";
 
 export default ({
     delta,

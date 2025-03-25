@@ -1,9 +1,9 @@
 import Delta from "quill-delta";
-import DraftReader from "../component/DraftReader/DraftReader";
+import DraftReader from "../component/DraftContent/DraftContent";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getDraft } from "../api/get-draft";
-import DraftIndexTable from "../component/DraftIndexTable/DraftIndexTable";
+import DraftIndex from "../component/DraftIndex/DraftIndex";
 
 const DraftRead: React.FC = () => {
     const [delta, setDelta] = useState<Delta>(new Delta());
@@ -32,7 +32,7 @@ const DraftRead: React.FC = () => {
 
     return (
         <>
-            <DraftIndexTable headers={headers} />
+            <DraftIndex headers={headers} />
             <DraftReader
                 title={title}
                 delta={delta}

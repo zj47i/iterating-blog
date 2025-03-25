@@ -1,27 +1,49 @@
-import React from "react";
+import { useRef } from "react";
 import "./DraftIndex.css";
 
-const DraftIndex: React.FC = () => {
+interface HeaderWithAnchorProps {
+    headers: HTMLHeadElement[];
+}
+
+const draftIndex = (headers: HTMLHeadElement[]) => {
+    if (headers.length === 0) {
+        return null;
+    }
+
     return (
-        <aside className="app-draft-index">
+        <ul>
+            {headers.map((header, index) => {
+                const headerId = `header-${index}`;
+                const anchorId = `elmt-${index}`;
+                header.setAttribute("id", headerId);
+                const headerNumber = Number(header.tagName.match(/\d+/)![0]);
+                const ensp = "\u2003".repeat(headerNumber - 1);
+                return (
+                    <li key={anchorId}>
+                        {ensp}
+                        <a
+                            href={`#${headerId}`}
+                            style={{
+                                marginLeft: "8px",
+                                textDecoration: "none",
+                                color: "inherit",
+                            }}
+                        >
+                            🔗 {header.textContent}
+                        </a>
+                    </li>
+                );
+            })}
+        </ul>
+    );
+};
+
+const DraftIndex: React.FC<HeaderWithAnchorProps> = ({ headers }) => {
+    const containerRef = useRef<HTMLDivElement | null>(null);
+    return (
+        <aside className="app-draft-index" ref={containerRef}>
             <h3>Contents</h3>
-            <ul>
-                <li>
-                    <a href="#simplicity">1.1 Simplicity</a>
-                </li>
-                <li>
-                    <a href="#modernity">1.2 Modernity</a>
-                </li>
-                <li>
-                    <a href="#pragmatism">1.3 Pragmatism</a>
-                </li>
-                <li>
-                    <a href="#user-centrality">1.4 User centrality</a>
-                </li>
-                <li>
-                    <a href="#versatility">1.5 Versatility</a>
-                </li>
-            </ul>
+            {draftIndex(headers)}
         </aside>
     );
 };

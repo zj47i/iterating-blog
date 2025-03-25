@@ -5,9 +5,9 @@ import { useNavigate } from "react-router-dom";
 import React from "react";
 import { useAuth } from "../context/AuthProvider";
 import DraftWriter from "../component/DraftWriter";
-import { selectHeaders } from "../lib/html/select-headers";
+import { selectHeaders } from "../lib/select-headers";
 import Quill from "quill";
-import DraftIndexTable from "../component/DraftIndexTable/DraftIndexTable";
+import DraftIndexTable from "../component/DraftIndex/DraftIndex";
 
 import "./DraftWrite.css";
 
