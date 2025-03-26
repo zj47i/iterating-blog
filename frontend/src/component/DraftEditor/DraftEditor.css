@@ -1,0 +1,33 @@
+.editor-title {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 20px;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+}
+.editor-banner {
+    background-color: #fffae6;
+    border: 1px solid #ffe08a;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #8a6d3b;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+.ql-container {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: sans-serif;
+    background-color: white;
+}
+.ql-toolbar {
+    border-bottom: 1px solid #ccc;
+    background-color: #f9f9f9;
+}
+.ql-editor {
+    min-height: 300px;
+    padding: 20px;
+    line-height: 1.6;
+}

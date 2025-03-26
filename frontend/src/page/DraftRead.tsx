@@ -1,5 +1,5 @@
 import Delta from "quill-delta";
-import DraftReader from "../component/DraftContent/DraftContent";
+import DraftContent from "../component/DraftContent/DraftContent";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getDraft } from "../api/get-draft";
@@ -33,7 +33,7 @@ const DraftRead: React.FC = () => {
     return (
         <>
             <DraftIndex headers={headers} />
-            <DraftReader
+            <DraftContent
                 title={title}
                 delta={delta}
                 setHeaders={setHeaders}
