@@ -4,10 +4,6 @@ import {
     ConnectionProvider,
     WalletProvider,
 } from "@solana/wallet-adapter-react";
-import {
-    PhantomWalletAdapter,
-    CloverWalletAdapter,
-} from "@solana/wallet-adapter-wallets";
 import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
 import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
 import { clusterApiUrl } from "@solana/web3.js";
@@ -23,10 +19,7 @@ function App() {
     const network = WalletAdapterNetwork.Mainnet;
 
     const endpoint = useMemo(() => clusterApiUrl(network), [network]);
-    const wallets = useMemo(
-        () => [new CloverWalletAdapter(), new PhantomWalletAdapter()],
-        [network]
-    );
+    const wallets = useMemo(() => [], [network]);
 
     return (
         <ConnectionProvider endpoint={endpoint}>

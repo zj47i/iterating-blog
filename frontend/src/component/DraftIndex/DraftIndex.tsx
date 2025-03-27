@@ -41,8 +41,9 @@ const draftIndex = (headers: HTMLHeadElement[]) => {
 const DraftIndex: React.FC<HeaderWithAnchorProps> = ({ headers }) => {
     const containerRef = useRef<HTMLDivElement | null>(null);
     return (
+        headers.length > 0 &&
         <aside className={styles["app-draft-index"]} ref={containerRef}>
-            <h3>Contents</h3>
+            <h3>Index</h3>
             {draftIndex(headers)}
         </aside>
     );
