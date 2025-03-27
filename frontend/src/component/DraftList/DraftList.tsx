@@ -27,9 +27,9 @@ export default function ({
         navigation(`?page=${page}`); // URL 업데이트
     };
     return (
-        <main className="main-container">
-            <div className="draft-list-container">
-                <h2 className="draft-list-title">All Drafts</h2>
+        <div className="draft-list-container">
+            <h2>All Drafts</h2>
+            <div className="draft-list">
                 {drafts.map((draft) => (
                     <div className="draft-list-item" key={draft.id}>
                         <Link to={`/draft/read?id=${draft.id}`}>
@@ -42,7 +42,7 @@ export default function ({
                     </div>
                 ))}
             </div>
-            <div className="drafts-pagination">
+            <div className="draft-list-pagination">
                 {Array.from({ length: pageCount }, (_, index) => index + 1).map(
                     (page) => (
                         <button
@@ -55,6 +55,6 @@ export default function ({
                     )
                 )}
             </div>
-        </main>
+        </div>
     );
 }

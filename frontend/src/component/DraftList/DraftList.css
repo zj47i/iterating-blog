@@ -1,67 +1,65 @@
-main {
+.draft-list-container {
     flex: 1;
     padding: 40px 20px;
     display: flex;
-    justify-content: center;
-}
-.main-container {
-    width: 100%;
-    max-width: 800px;
-    display: flex;
     flex-direction: column;
-    align-items: stretch;
-}
-.draft-list-container {
-    width: 100%;
+    align-items: center;
     max-width: 800px;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-}
-.draft-list-title {
+    margin: 0 auto;
+  }
+  .draft-list-container h2 {
     margin-top: 0;
     font-size: 24px;
     border-bottom: 1px solid #ddd;
     padding-bottom: 10px;
-}
-.draft-list-item {
+    width: 100%;
+  }
+  .draft-list {
+    width: 100%;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  .draft-list-item {
     padding: 12px 0;
     border-bottom: 1px solid #eee;
-}
-.draft-list-item:last-child {
+  }
+  .draft-list-item:last-child {
     border-bottom: none;
-}
-.draft-list-item a {
+  }
+  .draft-list-item a {
     font-size: 18px;
     color: #2c3e50;
     text-decoration: none;
-}
-.draft-list-item a:hover {
+  }
+  .draft-list-item a:hover {
     text-decoration: underline;
-}
-.draft-list-item-date {
+  }
+  .draft-list-item-date {
     font-size: 13px;
     color: #888;
     margin-top: 4px;
-}
-.draft-list-pagination {
+  }
+  .draft-list-pagination {
     margin-top: 20px;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 6px;
-}
-.draft-list-pagination button {
+  }
+  .draft-list-pagination button {
     padding: 6px 12px;
     border: 1px solid #ccc;
     background-color: white;
     cursor: pointer;
     border-radius: 4px;
-}
-.draft-list-pagination button:hover {
+  }
+  .draft-list-pagination button:hover {
     background-color: #f0f0f0;
-}
-.draft-list-pagination .active {
+  }
+  .draft-list-pagination .active {
     font-weight: bold;
     background-color: #ddd;
-}
+  }

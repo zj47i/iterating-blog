@@ -1,8 +1,8 @@
 import { useEffect, useRef } from "react";
 import Quill from "quill";
 import Delta from "quill-delta";
-import "./DraftContent.css";
 import { selectHeaders } from "../../lib/select-headers";
+import styles from "./DraftContent.module.css";
 
 const quillHTML = (delta: Delta): string => {
     const tempCont = document.createElement("div");
@@ -15,9 +15,8 @@ const titleHTML = (title: string): string => {
 };
 
 const toolbarHTML = `
-  <div class="toolbar">
+  <div class="${styles.toolbar}">
     <a href="#" id="toolbar-edit">Edit</a>
-    <a href="#">View Source</a>
     <a href="#">History</a>
   </div>
 `;
@@ -33,7 +32,7 @@ export default function DraftContent({
     setHeaders: React.Dispatch<React.SetStateAction<HTMLHeadElement[]>>;
     navigateToEdit: () => void;
 }) {
-    const contentRef = useRef<HTMLElement | null>(null);
+    const contentRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
         const content = contentRef.current;
@@ -75,5 +74,5 @@ export default function DraftContent({
         };
     }, []);
 
-    return <main className="app-draft-content" ref={contentRef}></main>;
+    return <div className={styles["app-draft-content"]} ref={contentRef}></div>;
 }

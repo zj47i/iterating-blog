@@ -4,7 +4,7 @@ import "./AppFooter.css";
 const AppFooter: React.FC = () => {
     return (
         <>
-            <footer className="app-footer">
+            <footer>
                 <p>This page was last edited on 14 March 2025, at 08:17.</p>
                 <p>
                     Content is available under{" "}

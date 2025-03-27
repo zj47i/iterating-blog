@@ -31,3 +31,14 @@
     padding: 20px;
     line-height: 1.6;
 }
+
+.toolbar {
+    margin-top: 20px;
+    font-size: 14px;
+    text-align: right;
+}
+.toolbar a {
+    color: #2980b9;
+    margin-left: 10px;
+    text-decoration: none;
+}

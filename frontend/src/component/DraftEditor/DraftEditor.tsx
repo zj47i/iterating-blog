@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import Quill from "quill";
 import hljs from "highlight.js";
-import "./DraftEditor.css";
+import styles from "./DraftEditor.module.css";
 import Delta from "quill-delta";
 import { toolbarOptions } from "./tool-bar-options";
 import { selectHeaders } from "../../lib/select-headers";
@@ -19,7 +19,7 @@ export default ({
     setHeaders: React.Dispatch<React.SetStateAction<HTMLHeadElement[]>>;
     onTextChange: (quill: Quill) => void;
     save: Function;
-    del: Function;
+    del?: Function;
 }) => {
     const editorRef = useRef<HTMLDivElement | null>(null);
     const qlContentRef = useRef<HTMLDivElement | null>(null);
@@ -84,20 +84,20 @@ export default ({
 
     return (
         <>
-            <div className="editor" ref={editorRef}>
-                <div className="editor-banner">
+            <div ref={editorRef}>
+                <div className={styles["editor-banner"]}>
                     You are currently editing this document. Don't forget to
                     save your changes.
                 </div>
-                <div className="title">
+                <div>
                     <input
-                        className="editor-title"
+                        className={styles["editor-title"]}
                         type="text"
                         ref={titleRef}
                     />
                 </div>
-                <div className="ql-content" ref={qlContentRef} />
-                <div className="toolbar">
+                <div className={styles["ql-container"]} ref={qlContentRef} />
+                <div className={styles.toolbar}>
                     <a
                         href="#"
                         onClick={(e) => {
@@ -107,15 +107,17 @@ export default ({
                     >
                         Save
                     </a>
-                    <a
-                        href="#"
-                        onClick={(e) => {
-                            e.preventDefault();
-                            del();
-                        }}
-                    >
-                        Delete
-                    </a>
+                    {del && (
+                        <a
+                            href="#"
+                            onClick={(e) => {
+                                e.preventDefault();
+                                del();
+                            }}
+                        >
+                            Delete
+                        </a>
+                    )}
                 </div>
             </div>
         </>

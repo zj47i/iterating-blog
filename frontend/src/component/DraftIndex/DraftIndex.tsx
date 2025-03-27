@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import "./DraftIndex.css";
+import styles from "./DraftIndex.module.css";
 
 interface HeaderWithAnchorProps {
     headers: HTMLHeadElement[];
@@ -41,7 +41,7 @@ const draftIndex = (headers: HTMLHeadElement[]) => {
 const DraftIndex: React.FC<HeaderWithAnchorProps> = ({ headers }) => {
     const containerRef = useRef<HTMLDivElement | null>(null);
     return (
-        <aside className="app-draft-index" ref={containerRef}>
+        <aside className={styles["app-draft-index"]} ref={containerRef}>
             <h3>Contents</h3>
             {draftIndex(headers)}
         </aside>

@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import DraftList from "../component/DraftList/DraftList";
 import { Draft } from "../../../interface/dist/esm/type/draft";
 
-const D: React.FC = () => {
+const Drafts: React.FC = () => {
     const [drafts, setDrafts] = useState<Draft[]>([]);
     const location = useLocation();
     const params = new URLSearchParams(location.search);
@@ -33,16 +33,14 @@ const D: React.FC = () => {
 
     return (
         <>
-            <main>
-                <DraftList
-                    drafts={drafts}
-                    currentPage={currentPage}
-                    pageCount={pageCount}
-                    setCurrentPage={setCurrentPage}
-                />
-            </main>
+            <DraftList
+                drafts={drafts}
+                currentPage={currentPage}
+                pageCount={pageCount}
+                setCurrentPage={setCurrentPage}
+            />
         </>
     );
 };
 
-export default D;
+export default Drafts;
