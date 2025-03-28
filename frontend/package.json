@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "@blog/interface": "link:../interface",
+    "@types/node": "^22.13.14",
     "@types/qs": "^6.9.15",
     "@types/quill": "^2.0.14",
     "@types/react": "^18.3.3",
