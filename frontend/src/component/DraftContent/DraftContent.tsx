@@ -64,15 +64,5 @@ export default function DraftContent({
         navigateToEdit();
     };
 
-    useEffect(() => {
-        const handleBeforeUnload = (event: BeforeUnloadEvent) => {
-            event.preventDefault();
-        };
-        window.addEventListener("beforeunload", handleBeforeUnload);
-        return () => {
-            window.removeEventListener("beforeunload", handleBeforeUnload);
-        };
-    }, []);
-
     return <div className={styles["app-draft-content"]} ref={contentRef}></div>;
 }
