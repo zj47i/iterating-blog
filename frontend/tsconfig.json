@@ -10,5 +10,11 @@
         {
             "path": "../interface"
         }
-    ]
+    ],
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["./src/*"]
+        }
+    }
 }

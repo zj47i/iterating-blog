@@ -5,6 +5,7 @@ import DraftRead from "../../page/DraftRead";
 import DraftEdit from "../../page/DraftEdit";
 import Drafts from "../../page/Drafts";
 import DraftWrite from "../../page/DraftWrite";
+import { DraftTest } from "../../page/DraftTest";
 
 const AppContainer: React.FC = () => {
     return (
@@ -12,6 +13,7 @@ const AppContainer: React.FC = () => {
             <Routes>
                 <Route path="draft/read" element={<DraftRead />} />
                 <Route path="draft/edit" element={<DraftEdit />} />
+                <Route path="draft/test" element={<DraftTest />} />
                 <Route path="draft/write" element={<DraftWrite />} />
                 <Route path="drafts" element={<Drafts />} />
             </Routes>
