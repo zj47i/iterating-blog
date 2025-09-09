@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SERVICE_NAME="iterating"
+SERVICE_NAME="iterating-blog"
 
 # local, dev, stage, prod
 STAGE="$1"
@@ -10,6 +10,5 @@ if [[ "$STAGE" != "local" && "$STAGE" != "dev" && "$STAGE" != "stage" && "$STAGE
 fi
 
 # Docker build, tag, and push commands
-docker build --rm --platform linux/arm64 -t 192.168.0.15:4358/$SERVICE_NAME-backend-$STAGE:latest -f dockerfile.backend .
-docker tag 192.168.0.15:4358/$SERVICE_NAME-backend-$STAGE:latest 192.168.0.15:4358/$SERVICE_NAME-backend-$STAGE:latest
-docker push 192.168.0.15:4358/$SERVICE_NAME-backend-$STAGE:latest
+export DOCKER_HOST="tcp://user@192.168.0.5:2375"
+docker build -t $SERVICE_NAME-backend-$STAGE:latest -f dockerfile.backend .

@@ -1,5 +1,11 @@
 # 1. 베이스 이미지 설정
 FROM node:20-alpine
+# 알파인 버전에 따라 둘 중 하나가 존재
+# 3.18대: openssl1.1-compat
+# 3.19~3.20: libssl1.1-compat (edge/community 필요할 수 있음)
+RUN apk add --no-cache openssl     # libssl3, libcrypto3 포함
+
+ENV CI=true
 
 # 2. 작업 디렉토리 설정
 WORKDIR /home/node/app
@@ -9,7 +15,7 @@ COPY backend ./backend
 COPY interface ./interface
 
 # 4. Corepack 활성화 (Pnpm 지원)
-RUN corepack enable
+RUN npm install -g pnpm
 
 # 5. 의존성 설치 (백엔드)
 WORKDIR /home/node/app/backend

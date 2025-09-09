@@ -1,5 +1,7 @@
 #!/bin/bash
 
+SERVICE_NAME="iterating-blog"
+
 # local, dev, stage, prod
 STAGE="$1"
 if [[ "$STAGE" != "local" && "$STAGE" != "dev" && "$STAGE" != "stage" && "$STAGE" != "prod" ]]; then
@@ -7,6 +9,6 @@ if [[ "$STAGE" != "local" && "$STAGE" != "dev" && "$STAGE" != "stage" && "$STAGE
     exit 1
 fi
 
-export $(grep -v '^#' .env.frontend.$STAGE | xargs)
-
-pnpm --prefix frontend build
+# Docker build, tag, and push commands
+export DOCKER_HOST="tcp://user@192.168.0.3:2375"
+docker build --build-arg VITE_BACKEND_BASE_URL="https://backend.iterating.io" -t $SERVICE_NAME-$STAGE:latest -f dockerfile.frontend .
