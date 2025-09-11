@@ -10,5 +10,5 @@ if [[ "$STAGE" != "local" && "$STAGE" != "dev" && "$STAGE" != "stage" && "$STAGE
 fi
 
 # Docker build, tag, and push commands
-export DOCKER_HOST="tcp://user@192.168.0.5:2375"
+export DOCKER_HOST="tcp://user@192.168.0.2:2375"
 docker build -t $SERVICE_NAME-backend-$STAGE:latest -f dockerfile.backend .
