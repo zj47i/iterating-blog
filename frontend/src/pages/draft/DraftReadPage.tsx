@@ -1,11 +1,11 @@
 import Delta from "quill-delta";
-import DraftContent from "../component/DraftContent/DraftContent";
+import DraftContent from "./components/DraftContent/DraftContent";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { getDraft } from "../api/get-draft";
-import DraftIndex from "../component/DraftIndex/DraftIndex";
+import { getDraft } from "../../shared/api/get-draft";
+import DraftIndex from "../drafts/components/DraftIndex/DraftIndex";
 
-const DraftRead: React.FC = () => {
+const DraftReadPage: React.FC = () => {
     const [delta, setDelta] = useState<Delta>(new Delta());
     const [title, setTitle] = useState("");
     const [headers, setHeaders] = useState<HTMLHeadElement[]>([]);
@@ -43,4 +43,4 @@ const DraftRead: React.FC = () => {
     );
 };
 
-export default DraftRead;
+export default DraftReadPage;

@@ -10,10 +10,10 @@ import { clusterApiUrl } from "@solana/web3.js";
 
 // Default styles that can be overridden by your app
 import "@solana/wallet-adapter-react-ui/styles.css";
-import { AuthProvider } from "../context/AuthProvider";
-import AppHeader from "./AppHeader/AppHeader";
-import AppContainer from "./AppContainer/AppContainer";
-import AppFooter from "./AppFooter/AppFooter";
+import { AuthProvider } from "../shared/context/AuthProvider";
+import AppHeader from "../components/layout/AppHeader/AppHeader";
+import AppContainer from "../components/layout/AppContainer/AppContainer";
+import AppFooter from "../components/layout/AppFooter/AppFooter";
 
 function App() {
     const network = WalletAdapterNetwork.Mainnet;

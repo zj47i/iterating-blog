@@ -1,16 +1,16 @@
 import { useRef, useState } from "react";
-import { postDraft } from "../api/post-draft";
+import { postDraft } from "../../shared/api/post-draft";
 import { useNavigate } from "react-router-dom";
 
 import React from "react";
-import { useAuth } from "../context/AuthProvider";
-import DraftEditor from "../component/DraftEditor/DraftEditor";
-import { selectHeaders } from "../lib/select-headers";
+import { useAuth } from "../../shared/context/AuthProvider";
+import DraftEditor from "./components/DraftEditor/DraftEditor";
+import { selectHeaders } from "../../shared/lib/select-headers";
 import Quill from "quill";
 
-import DraftIndex from "../component/DraftIndex/DraftIndex";
+import DraftIndex from "../drafts/components/DraftIndex/DraftIndex";
 
-const DraftWrite: React.FC = () => {
+const DraftWritePage: React.FC = () => {
     const [content, setContent] = useState<string | null>(null);
     const [headers, setHeaders] = useState<HTMLHeadElement[]>([]);
     const titleRef = useRef<HTMLInputElement>(null);
@@ -56,4 +56,4 @@ const DraftWrite: React.FC = () => {
     );
 };
 
-export default DraftWrite;
+export default DraftWritePage;

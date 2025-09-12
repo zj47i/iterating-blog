@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { getDrafts } from "../api/get-drafts";
+import { getDrafts } from "../../shared/api/get-drafts";
 import { useLocation } from "react-router-dom";
-import DraftList from "../component/DraftList/DraftList";
-import { Draft } from "../../../interface/dist/esm/type/draft";
+import DraftList from "./components/DraftList/DraftList";
+import { Draft } from "../../../../interface/dist/esm/type/draft";
 
-const Drafts: React.FC = () => {
+const DraftsPage: React.FC = () => {
     const [drafts, setDrafts] = useState<Draft[]>([]);
     const location = useLocation();
     const params = new URLSearchParams(location.search);
@@ -43,4 +43,4 @@ const Drafts: React.FC = () => {
     );
 };
 
-export default Drafts;
+export default DraftsPage;

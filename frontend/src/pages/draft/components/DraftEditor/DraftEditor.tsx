@@ -4,7 +4,7 @@ import hljs from "highlight.js";
 import styles from "./DraftEditor.module.css";
 import Delta from "quill-delta";
 import { toolbarOptions } from "./tool-bar-options";
-import { selectHeaders } from "../../lib/select-headers";
+import { selectHeaders } from "../../../../shared/lib/select-headers";
 
 export default ({
     titleRef,

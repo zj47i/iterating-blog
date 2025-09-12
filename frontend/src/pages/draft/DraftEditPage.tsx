@@ -3,16 +3,16 @@ import { useLocation, useNavigate } from "react-router-dom";
 import Delta from "quill-delta";
 import Quill from "quill";
 
-import { useAuth } from "../context/AuthProvider";
-import { getDraft } from "../api/get-draft";
-import { putDraft } from "../api/put-draft";
-import { deleteDraft } from "../api/delete-draft";
-import { selectHeaders } from "../lib/select-headers";
+import { useAuth } from "../../shared/context/AuthProvider";
+import { getDraft } from "../../shared/api/get-draft";
+import { putDraft } from "../../shared/api/put-draft";
+import { deleteDraft } from "../../shared/api/delete-draft";
+import { selectHeaders } from "../../shared/lib/select-headers";
 
-import DraftIndex from "../component/DraftIndex/DraftIndex";
-import DraftEditor from "../component/DraftEditor/DraftEditor";
+import DraftIndex from "../drafts/components/DraftIndex/DraftIndex";
+import DraftEditor from "./components/DraftEditor/DraftEditor";
 
-const DraftEdit: React.FC = () => {
+const DraftEditPage: React.FC = () => {
     const [delta, setDelta] = useState<Delta>(new Delta());
     const [content, setContent] = useState<string | null>(null);
     const [headers, setHeaders] = useState<HTMLHeadElement[]>([]);
@@ -101,4 +101,4 @@ const DraftEdit: React.FC = () => {
     );
 };
 
-export default DraftEdit;
+export default DraftEditPage;
