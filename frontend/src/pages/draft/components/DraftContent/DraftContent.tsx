@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import Quill from "quill";
 import Delta from "quill-delta";
-import { selectHeaders } from "../../lib/select-headers";
+import { selectHeaders } from "../../../../shared/lib/select-headers";
 import styles from "./DraftContent.module.css";
 
 const quillHTML = (delta: Delta): string => {

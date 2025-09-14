@@ -1,5 +1,5 @@
 import qs from "qs";
-import { BACKEND_BASE_URL } from "../../env";
+import { BACKEND_BASE_URL } from "../../../env";
 
 export const post = async <INPUT, OUTPUT, HEADER = {}>(param: {
     path: string;

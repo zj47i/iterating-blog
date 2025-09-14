@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { Draft } from "../../../../interface/dist/esm/type/draft";
+import { Draft } from "../../../../../../interface/dist/esm/type/draft";
 import "./DraftList.css";
 
 const formatDate = (dateString: Date) => {
